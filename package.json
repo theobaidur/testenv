@@ -1,0 +1,44 @@
+{
+  "name": "@theobaidur/testenv",
+  "version": "1.0.2",
+  "description": "A cli to test your .env files using dotenv",
+  "keywords": [
+    "dotenv",
+    "env",
+    ".env",
+    "cli",
+    "javascript"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/theobaidur/testenv",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theobaidur/testenv"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "clear": "rimraf dist",
+    "watch": "npm run clear && tsc -w",
+    "build": "npm run clear && tsc",
+    "install:local": "npm run build && npm install -g .",
+    "testenv": "node dist/index.js",
+    "deploy": "npm run build && npm publish --access public"
+  },
+  "bin": {
+    "testenv": "./dist/index.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "dotenv-expand": "^10.0.0",
+    "find-up": "5",
+    "glob": "^8.1.0"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.0.1",
+    "@types/node": "^18.13.0",
+    "chalk": "4",
+    "commander": "^10.0.0",
+    "rimraf": "^4.1.2",
+    "typescript": "^4.9.5"
+  }
+}
